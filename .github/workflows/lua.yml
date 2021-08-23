@@ -22,6 +22,7 @@ jobs:
     - uses: leafo/gh-actions-luarocks@v4.0.0
     - name: Install
       run: |
+        apt-get install libssl-dev
         luarocks install --server=http://luarocks.org/dev openssl
         luarocks install luasec OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu
         luarocks install busted
